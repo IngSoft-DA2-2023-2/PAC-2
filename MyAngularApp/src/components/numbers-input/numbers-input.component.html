@@ -3,9 +3,9 @@ Indique los numeros
 <input
   type="number"
   placeholder="Aprete , o enter para confirmar el numero"
-  [(ngModel)]="value"
+  [(value)]="value"
   (keyup)="onValueChange($event)"
-  [ngStyle]="{ width: '500px' }" />
+  [style]="{ width: '500px' }" />
 <br />
 <div *ngFor="let number of numbers">
   <small>{{ number }}</small>
