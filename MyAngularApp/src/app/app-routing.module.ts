@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomePageComponent } from './home/home-page/home-page.component';
-import { AuthenticationPageComponent } from './authentication/authentication-page/authentication-page.component';
+import { HomeComponent } from './home/home/home.component';
+import { AuthenticationComponent } from './authentication/authentication/authentication.component';
 
 const routes: Routes = [
   {
-    path: '',
-    component: AuthenticationPageComponent,
+    path: './authentication/authentication/authentication.component.html',
+    component: AuthenticationComponent,
   },
   {
-    path: 'home',
-    component: HomePageComponent,
+    path: './home/home/home.component.html',
+    component: HomeComponent,
   },
 ];
 
