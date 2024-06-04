@@ -7,6 +7,6 @@ import { NumbersInputComponent } from '../../components/numbers-input/numbers-in
 
 @NgModule({
   declarations: [HomePageComponent],
-  imports: [CommonModule, HomeRoutingModule],
+  imports: [CommonModule, HomeRoutingModule, NumbersInputComponent],
 })
 export class HomeModule {}
