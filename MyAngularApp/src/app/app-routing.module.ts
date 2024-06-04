@@ -6,12 +6,21 @@ import { AuthenticationPageComponent } from './authentication/authentication-pag
 const routes: Routes = [
   {
     path: '',
-    component: AuthenticationPageComponent,
+    redirectTo: 'login',
+    pathMatch: 'full'
   },
   {
     path: 'home',
-    component: HomePageComponent,
+    loadChildren: () => import('./home/home-routing.module').then(m => m.HomeRoutingModule),
   },
+  {
+    path: 'login',
+    loadChildren: () => import('./authentication/authentication-routing.module').then(m => m.AuthenticationRoutingModule),
+  },
+  {
+    path: '**',
+    redirectTo: 'login',
+  }
 ];
 
 @NgModule({
