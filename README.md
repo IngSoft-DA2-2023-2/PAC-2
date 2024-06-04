@@ -12,7 +12,7 @@ El codigo cuenta de dos partes, un front end y un back end. El objetivo es que c
 
 El resultado de la ordenacion se debera de mostrar abajo del boton como prefieran.
 
-### Tareas
+### Tareas front end
 
 #### Arreglar errores de compilacion
 
@@ -25,3 +25,11 @@ Se deberan de tener las siguientes rutas: `login`, `home`, `/` que redireccione 
 #### Implementar boton de navegacion en `authentication-page`
 
 #### Implementar uso de sorters en `home-page`
+
+### Tareas back end
+
+#### Implementar comportamientos incompletos en `LoadAssemblyService`
+
+#### Mover las dlls de sorters
+
+Mover las dlls `Reflection.BubbleSort` y `Reflection.MergeSort` que se encuentran en la raiz del repo, y moverlas al correcto lugar para utilizarlas con reflection.
