@@ -1,0 +1,21 @@
+<div>
+    <h1>Home Page</h1>
+    <div>
+        <select [(ngModel)]="selectedSorter">
+            <option value="" disabled>Select sorter</option>
+            <option *ngFor="let sorter of sorters" [value]="sorter">{{ sorter }}</option>
+        </select>
+    </div>
+    <div>
+        <input
+                type="text"
+                placeholder="Enter numbers separated by commas"
+                [(ngModel)]="numbers"
+        />
+    </div>
+    <button (click)="sortNumbers()">Sort</button>
+    <div>
+        <h2 *ngIf="sortedNumbers.length">Sorted Numbers</h2>
+        <p>{{ sortedNumbers.join(', ') }}</p>
+    </div>
+</div>

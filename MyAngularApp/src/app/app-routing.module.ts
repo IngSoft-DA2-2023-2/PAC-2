@@ -6,16 +6,25 @@ import { AuthenticationPageComponent } from './authentication/authentication-pag
 const routes: Routes = [
   {
     path: '',
-    component: AuthenticationPageComponent,
+    redirectTo: 'login',
+    pathMatch: 'full'
+  },
+  {
+    path: 'login',
+    component: AuthenticationPageComponent
   },
   {
     path: 'home',
-    component: HomePageComponent,
+    component: HomePageComponent
   },
+  {
+    path: '**',
+    redirectTo: 'login'
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
 export class AppRoutingModule {}
