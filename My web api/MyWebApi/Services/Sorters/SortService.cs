@@ -7,7 +7,7 @@ namespace MyWebApi.Services.Validators
     {
         public List<string> GetAll()
         {
-            var implementations = _loadAssemblyService.GetAll("Sorters");
+            var implementations = _loadAssemblyService.GetAll("Sorters"); 
             
             return implementations.ConvertAll(i => i.GetIdentifier());
         }

@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { SortApiRepositoryService } from './sort-api-repository.service';
 
 @Injectable({
   providedIn: 'root',
 })
+
 export class SortService {
   constructor(private readonly _repository: SortApiRepositoryService) {}
 

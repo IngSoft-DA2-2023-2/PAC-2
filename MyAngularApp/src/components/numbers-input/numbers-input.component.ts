@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 
+
 @Component({
   selector: 'app-numbers-input',
   standalone: true,
