@@ -1,9 +1,11 @@
+import { NgFor, NgStyle } from '@angular/common';
 import { Component, EventEmitter, Output } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-numbers-input',
   standalone: true,
-  imports: [],
+  imports: [NgFor, FormsModule, NgStyle],
   templateUrl: './numbers-input.component.html',
   styles: ``,
 })

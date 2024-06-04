@@ -1,20 +1,59 @@
-﻿
-using System.IO;
-using System.Reflection;
+﻿using System.Reflection;
 
 namespace MyWebApi.Services.LoadAssembly
 {
-    public sealed class LoadAssemblyService<T> : ILoadAssemblyService<T>
-        where T : class
+    public sealed class LoadAssemblyService<IInterface> : ILoadAssemblyService<IInterface>
+        where IInterface : class
     {
-        public List<T> GetAll(string directory)
+        private List<Type> implementations = new List<Type>();
+        
+        public List<IInterface> GetAll(string directory)
         {
-            throw new NotImplementedException();
+            var parsedDirectory = new DirectoryInfo(directory);
+            
+            var files = parsedDirectory
+                .GetFiles("*.dll")
+                .ToList();
+
+            implementations = new List<Type>();
+            files.ForEach(file =>
+            {
+                Assembly assemblyLoaded = Assembly.LoadFile(file.FullName);
+                var loadedTypes = assemblyLoaded
+                    .GetTypes()
+                    .Where(t => t.IsClass && typeof(IInterface).IsAssignableFrom(t))
+                    .ToList();
+
+                if (loadedTypes.Count == 0)
+                {
+                    Console.WriteLine($"Nadie implementa la interfaz: {typeof(IInterface).Name} en el assembly: {file.FullName}");
+
+                    return;
+                }
+
+                this.implementations = implementations
+                    .Union(loadedTypes)
+                    .ToList();
+            });
+            
+            var instances = new List<IInterface>();
+            foreach (var implementation in implementations)
+            {
+                var instance = Activator.CreateInstance(implementation) as IInterface;
+                if (instance != null)
+                {
+                    instances.Add(instance);
+                }
+            }
+
+            return instances;
         }
 
-        public T GetByIdentifier(string identifier)
+        public IInterface GetByIdentifier(string identifier)
         {
-            throw new NotImplementedException();
+            var type = implementations.Find(s => s.FullName == identifier);
+
+            return Activator.CreateInstance(type) as IInterface;
         }
     }
 }
