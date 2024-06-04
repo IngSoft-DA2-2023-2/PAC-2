@@ -1,9 +1,13 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { InputComponent } from '../input/input.component';
+import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-numbers-input',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, InputComponent, FormsModule],
   templateUrl: './numbers-input.component.html',
   styles: ``,
 })
