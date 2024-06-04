@@ -4,10 +4,9 @@ import { Component, Input } from '@angular/core';
   selector: 'app-button',
   standalone: true,
   imports: [],
-  templateUrl: './button.component.html',
-  styles: ``,
+  templateUrl: './button.component.html'
 })
 export class ButtonComponent {
-  @Input({ required: true }) title!: string;
+  @Input({required: true }) title!: string;
   @Input({ required: true }) onClick!: () => void;
 }
