@@ -1,9 +1,11 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { CommonModule, NgFor } from '@angular/common';
+
 
 @Component({
   selector: 'app-numbers-input',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, NgFor],
   templateUrl: './numbers-input.component.html',
   styles: ``,
 })

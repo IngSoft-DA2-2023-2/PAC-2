@@ -5,13 +5,18 @@ import { AuthenticationPageComponent } from './authentication/authentication-pag
 
 const routes: Routes = [
   {
-    path: '',
+    path: '', component: AuthenticationPageComponent,
+  },
+  {
+    path: '/login',
     component: AuthenticationPageComponent,
   },
   {
     path: 'home',
     component: HomePageComponent,
   },
+  { path: '/', redirectTo: '/login', pathMatch: 'full' },
+  { path: '**', redirectTo: '/login' }
 ];
 
 @NgModule({
