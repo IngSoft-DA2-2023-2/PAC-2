@@ -6,6 +6,11 @@ import { AuthenticationPageComponent } from './authentication/authentication-pag
 const routes: Routes = [
   {
     path: '',
+    redirectTo: 'authentication',
+    pathMatch: 'full',
+  },
+  {
+    path: 'authentication',
     component: AuthenticationPageComponent,
   },
   {

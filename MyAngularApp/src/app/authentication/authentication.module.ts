@@ -9,5 +9,6 @@ import { AuthenticationPageComponent } from './authentication-page/authenticatio
     AuthenticationPageComponent
   ],
   imports: [CommonModule, AuthenticationRoutingModule],
+  exports: [AuthenticationPageComponent],
 })
 export class AuthenticationModule {}
