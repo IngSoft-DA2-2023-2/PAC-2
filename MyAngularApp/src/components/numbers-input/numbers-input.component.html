@@ -4,10 +4,11 @@ Indique los numeros
   type="number"
   placeholder="Aprete , o enter para confirmar el numero"
   [(ngModel)]="value"
-  (keyup)="onValueChange($event)"
-  [ngStyle]="{ width: '500px' }" />
+  (keyup)="onValueChange($event)"/>
 <br />
 <div *ngFor="let number of numbers">
   <small>{{ number }}</small>
   <br />
 </div>
+
+<!--[ngStyle]="{ width: '500px' }" -->
