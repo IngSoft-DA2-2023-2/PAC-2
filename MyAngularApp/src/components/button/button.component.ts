@@ -5,9 +5,17 @@ import { Component, Input } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './button.component.html',
-  styles: ``,
+  styleUrls: [],
 })
 export class ButtonComponent {
-  @Input({ required: true }) title!: string;
-  @Input({ required: true }) onClick!: () => void;
+  @Input() title: string = 'Button';
+  @Input() btnClass: string = 'green'; 
+  @Input() disabled: boolean = false;
+  @Input() onClick!: () => void;
+  handleClick() {
+    if (this.onClick) {
+      this.onClick();
+    }
+  }
 }
+

@@ -1,9 +1,11 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-numbers-input',
   standalone: true,
-  imports: [],
+  imports: [FormsModule, CommonModule],
   templateUrl: './numbers-input.component.html',
   styles: ``,
 })
@@ -25,3 +27,4 @@ export class NumbersInputComponent {
     this.numbersChange.emit(this.numbers);
   }
 }
+
