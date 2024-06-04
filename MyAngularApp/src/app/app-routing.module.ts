@@ -6,11 +6,20 @@ import { AuthenticationPageComponent } from './authentication/authentication-pag
 const routes: Routes = [
   {
     path: '',
+    redirectTo: '/login',
+    pathMatch: 'full'
+  },
+  {
+    path: 'login',
     component: AuthenticationPageComponent,
   },
   {
     path: 'home',
     component: HomePageComponent,
+  },
+  {
+    path: '**',
+    redirectTo: '/login'
   },
 ];
 
