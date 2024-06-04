@@ -1,0 +1,9 @@
+<p>home-page works!</p>
+<app-dropdown
+  [options]="dropdownOptions"
+  [label]="'Select an option:'"
+  [placeholder]="'Elige uno...'"
+  [emptyMessage]="'No options available'"
+  [value]="selectedOption"
+  (valueChange)="onDropdownValueChange($event)"
+></app-dropdown>
