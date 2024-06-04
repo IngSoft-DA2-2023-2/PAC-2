@@ -32,4 +32,4 @@ Se deberan de tener las siguientes rutas: `login`, `home`, `/` que redireccione 
 
 #### Mover las dlls de sorters
 
-Mover las dlls `Reflection.BubbleSort` y `Reflection.MergeSort` que se encuentran en la raiz del repo, y moverlas al correcto lugar para utilizarlas con reflection.
+Mover las dlls `Reflection.BubbleSort` y `Reflection.MergeSort` que se encuentran en carpeta `My web api`, y deben ser movidas al lugar correcto para que sean utilizadas con reflection.
