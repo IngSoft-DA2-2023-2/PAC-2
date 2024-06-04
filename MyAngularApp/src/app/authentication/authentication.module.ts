@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { RouterModule } from '@angular/router';
 import { AuthenticationRoutingModule } from './authentication-routing.module';
 import { AuthenticationPageComponent } from './authentication-page/authentication-page.component';
 
@@ -8,7 +8,7 @@ import { AuthenticationPageComponent } from './authentication-page/authenticatio
   declarations: [
     AuthenticationPageComponent
   ],
-  imports: [CommonModule, AuthenticationRoutingModule],
+  imports: [CommonModule, AuthenticationRoutingModule, RouterModule],
   exports: [AuthenticationPageComponent],
 })
 export class AuthenticationModule {}
