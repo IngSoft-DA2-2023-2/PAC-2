@@ -6,7 +6,7 @@ import { AuthenticationPageComponent } from './authentication-page/authenticatio
 
 @NgModule({
   declarations: [
-    AuthenticationPageComponent
+
   ],
   imports: [CommonModule, AuthenticationRoutingModule],
 })
