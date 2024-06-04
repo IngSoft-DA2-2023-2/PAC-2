@@ -3,11 +3,24 @@ import { CommonModule } from '@angular/common';
 
 import { AuthenticationRoutingModule } from './authentication-routing.module';
 import { AuthenticationPageComponent } from './authentication-page/authentication-page.component';
+import { RouterModule } from '@angular/router';
+
 
 @NgModule({
-  declarations: [
-    AuthenticationPageComponent
+  declarations: [AuthenticationPageComponent, /*LoginFormComponent*/],
+  imports: [
+    CommonModule,
+    AuthenticationRoutingModule,
+   // FormComponent,
+    //FormInputComponent,
+    //FormButtonComponent,
+    RouterModule,
   ],
-  imports: [CommonModule, AuthenticationRoutingModule],
 })
 export class AuthenticationModule {}
+
+
+
+
+
+
