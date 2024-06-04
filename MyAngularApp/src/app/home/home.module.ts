@@ -6,7 +6,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { NumbersInputComponent } from '../../components/numbers-input/numbers-input.component';
 
 @NgModule({
-  declarations: [HomePageComponent],
-  imports: [CommonModule, HomeRoutingModule],
+  declarations: [],
+  imports: [CommonModule, HomeRoutingModule, HomePageComponent]
 })
 export class HomeModule {}
