@@ -6,6 +6,17 @@ import {
 import { Observable, catchError, retry, throwError } from 'rxjs';
 
 export default abstract class ApiRepository {
+  sort(sorter: string, numbers: number[]): Observable<number[]> {
+    const body = { sorter, numbers };
+    return this._http.post<number[]>(`${this.fullEndpoint}/sort`, body, this.headers)
+      .pipe(retry(3), catchError(this.handleError));
+  }
+
+  getAll(): Observable<string[]> {
+    return this._http.get<string[]>(`${this.fullEndpoint}/all`, this.headers)
+      .pipe(retry(3), catchError(this.handleError));
+  }
+  
   protected fullEndpoint: string = `${this._apiOrigin}/${this._endpoint}`;
 
   protected get headers() {
